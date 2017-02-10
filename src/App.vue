@@ -1,12 +1,23 @@
 <template>
     <div id="app">
+        <top></top>
         <router-view></router-view>
     </div>
 </template>
 
 <script>
+import Top from 'pages/common/TemplateAppBar'
+
 export default {
-  name: 'app'
+    name: 'app',
+    data () {
+        return {
+
+        }
+    },
+    components: {
+        Top
+    }
 }
 </script>
 
@@ -20,8 +31,8 @@ export default {
         width: 100%;
         height: 100%;
     }
-    #app{
-        background-image: url('./assets/img/DSC_0309_2-min.jpg');
-        background-size: contain;
-    }
+    /*#app{*/
+        /*background-image: url('./assets/img/DSC_0309_2-min.jpg');*/
+        /*background-size: contain;*/
+    /*}*/
 </style>
