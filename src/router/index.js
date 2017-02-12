@@ -8,10 +8,10 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: RouterPath.PAGES_HOME,
-      component: Hello
-    },
+    // {
+    //   path: RouterPath.PAGES_HOME,
+    //   component: Hello
+    // },
     {
       path: RouterPath.PAGES_LOGIN,
       component: Login
