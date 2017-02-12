@@ -1,51 +1,34 @@
 <template>
-    <mu-appbar title="测试头部">
-        <div class="appbar-title-img"><img src="~assets/img/DoorGod.png"></div>
-        <div class="appbar-title-title"><a slot="left">门神</a></div>
-        <mu-flat-button color="white" label="接入" slot="right"/>
-        <mu-flat-button color="white" label="关于" slot="right"/>
-        <mu-flat-button color="white" v-if="loged" :label="msg" @click="redirect(routerLogin)" slot="right"/>
-    </mu-appbar>
+    <div class="captcha">
+        <div id="captcha-box">
+            <img :src="imgCaptchaUrl" @click="reloadImgCaptcha"/>
+            <a>声音验证码</a>
+            <mu-icon alt="声音验证码" value="headset_black" @click="reloadVoiceCaptcha"/>
+            <audio :src="audioCaptchaUrl" autoplay="autoplay" hidden="hidden"></audio>
+        </div>
+    </div>
 </template>
 <script>
     import * as RouterPath from 'constants/RouterPaths'
+    import * as API from 'constants/API'
     export default {
-        name: 'common',
+        name: 'captcha',
         data() {
             return {
-                msg: 'Hello World',
-                routerLogin: RouterPath.PAGES_LOGIN
+                imgCaptchaUrl:      API.API_GET_IMG_CAPTCHA + new Date().getTime(),
+                audioCaptchaUrl:    ''
             }
         },
         methods: {
-            redirect: id => {
-                switch (id){
-                    case RouterPath.PAGES_LOGIN:
-                        alert('tsttst');
-                        break;
-                };
+            //验证码单次使用
+            reloadImgCaptcha: function() {
+                this.imgCaptchaUrl   = API.API_GET_IMG_CAPTCHA + new Date().getTime();
+            },
+            reloadVoiceCaptcha: function() {
+                this.audioCaptchaUrl = API.API_GET_VOICE_CAPTCHA + new Date().getTime();
             }
         }
     }
 </script>
 <style scoped lang="less">
-    .mu-appbar {
-        position: fixed;
-        overflow: hidden;
-        top: 0;
-    .appbar-title-img {
-    img {
-        margin-top: 6px;
-        height: 50px;
-        float: left;
-    }
-    }
-    .appbar-title-title{
-        float: left;
-        margin-left: 20px;
-    a {
-        color: #FFF;
-    }
-    }
-    }
 </style>

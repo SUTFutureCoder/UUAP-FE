@@ -5,11 +5,7 @@
                 <mu-text-field label="手机号或邮箱" labelFloat/><br/>
                 <mu-text-field label="密码" type="password" labelFloat/><br/>
                 <mu-text-field label="验证码" hintText="图片或声音验证码" labelFloat/><br/>
-                <div id="captcha-box">
-                    <img src="~assets/img/DoorGod.png" @click="reloadImgCaptcha"/>
-                    <a>声音验证码</a>
-                    <mu-icon alt="声音验证码" value="headset_black"/>
-                </div>
+                <captcha></captcha>
             </div>
         </mu-card-media>
         <mu-card-actions>
@@ -25,6 +21,8 @@
     </mu-card>
 </template>
 <script>
+    import Captcha from '../../pages/common/Captcha'
+
     export default {
         name: 'login',
         data() {
@@ -36,6 +34,9 @@
                 //使用vue resource重新请求一个图片
                 alert('testestsetset');
             }
+        },
+        components: {
+            Captcha
         }
     }
 </script>
@@ -57,5 +58,11 @@
     }
     .mu-raised-button{
         width: 100%;
+    }
+    .captcha {
+        margin: 0 auto;
+    }
+    #captcha-box {
+        /*text-align: left;*/
     }
 </style>
