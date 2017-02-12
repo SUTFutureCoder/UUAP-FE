@@ -1,85 +1,26 @@
 <template>
     <mu-card>
         <mu-card-media>
-            <mu-date-picker hintText="竖屏模式选择"/> <br/>
-            <mu-date-picker mode="landscape" hintText="横屏模式选择"/> <br/>
-            <mu-time-picker hintText="12小时制"/><br/>
-            <mu-time-picker hintText="24小时制" format="24hr"/><br/>
-            <mu-time-picker hintText="横屏显示" mode="landscape"/><br/>
-            <mu-date-picker hintText="不可用" disabled/> <br/>
+            <div id="card-input-box">
+                <mu-text-field label="手机号或邮箱" labelFloat/><br/>
+                <mu-text-field label="密码" type="password" labelFloat/><br/>
+                <mu-text-field label="验证码" hintText="图片或声音验证码" labelFloat/><br/>
+                <div id="captcha-box">
+                    <img src="~assets/img/DoorGod.png" @click="reloadCaptcha"/>
+                    <a>声音验证码</a>
+                    <mu-icon alt="声音验证码" value="headset_black" size="50"/>
+                </div>
+            </div>
         </mu-card-media>
         <mu-card-actions>
-            <mu-raised-button label="屠龙宝刀，点击就送" primary/>
-        </mu-card-actions><mu-card-media>
-            <mu-date-picker hintText="竖屏模式选择"/> <br/>
-            <mu-date-picker mode="landscape" hintText="横屏模式选择"/> <br/>
-            <mu-time-picker hintText="12小时制"/><br/>
-            <mu-time-picker hintText="24小时制" format="24hr"/><br/>
-            <mu-time-picker hintText="横屏显示" mode="landscape"/><br/>
-            <mu-date-picker hintText="不可用" disabled/> <br/>
-        </mu-card-media>
-        <mu-card-actions>
-            <mu-raised-button label="屠龙宝刀，点击就送" primary/>
-        </mu-card-actions><mu-card-media>
-            <mu-date-picker hintText="竖屏模式选择"/> <br/>
-            <mu-date-picker mode="landscape" hintText="横屏模式选择"/> <br/>
-            <mu-time-picker hintText="12小时制"/><br/>
-            <mu-time-picker hintText="24小时制" format="24hr"/><br/>
-            <mu-time-picker hintText="横屏显示" mode="landscape"/><br/>
-            <mu-date-picker hintText="不可用" disabled/> <br/>
-        </mu-card-media>
-        <mu-card-actions>
-            <mu-raised-button label="屠龙宝刀，点击就送" primary/>
-        </mu-card-actions><mu-card-media>
-            <mu-date-picker hintText="竖屏模式选择"/> <br/>
-            <mu-date-picker mode="landscape" hintText="横屏模式选择"/> <br/>
-            <mu-time-picker hintText="12小时制"/><br/>
-            <mu-time-picker hintText="24小时制" format="24hr"/><br/>
-            <mu-time-picker hintText="横屏显示" mode="landscape"/><br/>
-            <mu-date-picker hintText="不可用" disabled/> <br/>
-        </mu-card-media>
-        <mu-card-actions>
-            <mu-raised-button label="屠龙宝刀，点击就送" primary/>
-        </mu-card-actions><mu-card-media>
-            <mu-date-picker hintText="竖屏模式选择"/> <br/>
-            <mu-date-picker mode="landscape" hintText="横屏模式选择"/> <br/>
-            <mu-time-picker hintText="12小时制"/><br/>
-            <mu-time-picker hintText="24小时制" format="24hr"/><br/>
-            <mu-time-picker hintText="横屏显示" mode="landscape"/><br/>
-            <mu-date-picker hintText="不可用" disabled/> <br/>
-        </mu-card-media>
-        <mu-card-actions>
-            <mu-raised-button label="屠龙宝刀，点击就送" primary/>
-        </mu-card-actions><mu-card-media>
-            <mu-date-picker hintText="竖屏模式选择"/> <br/>
-            <mu-date-picker mode="landscape" hintText="横屏模式选择"/> <br/>
-            <mu-time-picker hintText="12小时制"/><br/>
-            <mu-time-picker hintText="24小时制" format="24hr"/><br/>
-            <mu-time-picker hintText="横屏显示" mode="landscape"/><br/>
-            <mu-date-picker hintText="不可用" disabled/> <br/>
-        </mu-card-media>
-        <mu-card-actions>
-            <mu-raised-button label="屠龙宝刀，点击就送" primary/>
-        </mu-card-actions><mu-card-media>
-            <mu-date-picker hintText="竖屏模式选择"/> <br/>
-            <mu-date-picker mode="landscape" hintText="横屏模式选择"/> <br/>
-            <mu-time-picker hintText="12小时制"/><br/>
-            <mu-time-picker hintText="24小时制" format="24hr"/><br/>
-            <mu-time-picker hintText="横屏显示" mode="landscape"/><br/>
-            <mu-date-picker hintText="不可用" disabled/> <br/>
-        </mu-card-media>
-        <mu-card-actions>
-            <mu-raised-button label="屠龙宝刀，点击就送" primary/>
-        </mu-card-actions><mu-card-media>
-            <mu-date-picker hintText="竖屏模式选择"/> <br/>
-            <mu-date-picker mode="landscape" hintText="横屏模式选择"/> <br/>
-            <mu-time-picker hintText="12小时制"/><br/>
-            <mu-time-picker hintText="24小时制" format="24hr"/><br/>
-            <mu-time-picker hintText="横屏显示" mode="landscape"/><br/>
-            <mu-date-picker hintText="不可用" disabled/> <br/>
-        </mu-card-media>
-        <mu-card-actions>
-            <mu-raised-button label="屠龙宝刀，点击就送" primary/>
+            <mu-row gutter>
+                <mu-col width="100" tablet="70" desktop="70">
+                    <mu-raised-button id="card-action-login-btn" label="登录" primary/>
+                </mu-col>
+                <mu-col width="100" tablet="30" desktop="30">
+                    <mu-raised-button id="card-action-reg-btn"   label="注册" backgroundColor="#a4c639" />
+                </mu-col>
+            </mu-row>
         </mu-card-actions>
     </mu-card>
 </template>
@@ -92,7 +33,10 @@
             }
         },
         methods: {
-
+            reloadCaptcha: function (){
+                //使用vue resource重新请求一个图片
+                alert('testestsetset');
+            }
         }
     }
 </script>
@@ -100,7 +44,19 @@
     .mu-card{
         width: 50%;
         margin: 0 auto;
-        margin-top: 70px;
+        margin-top: 80px;
         margin-bottom: 10px;
+        text-align: center;
+    }
+    .mu-card-media{
+        position: relative;
+        margin: 0 auto;
+    }
+    .mu-card-actions{
+        margin: 0 auto;
+        width: 256px;
+    }
+    .mu-raised-button{
+        width: 100%;
     }
 </style>
