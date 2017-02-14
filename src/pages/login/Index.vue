@@ -6,9 +6,9 @@
                 <mu-text-field label="密码" type="password" labelFloat/><br/>
                 <mu-text-field label="验证码" hintText="图片或声音验证码" labelFloat/><br/>
                 <div id="captcha-box">
-                    <img src="~assets/img/DoorGod.png" @click="reloadCaptcha"/>
+                    <img src="~assets/img/DoorGod.png" @click="reloadImgCaptcha"/>
                     <a>声音验证码</a>
-                    <mu-icon alt="声音验证码" value="headset_black" size="50"/>
+                    <mu-icon alt="声音验证码" value="headset_black"/>
                 </div>
             </div>
         </mu-card-media>
@@ -29,7 +29,6 @@
         name: 'login',
         data() {
             return {
-
             }
         },
         methods: {

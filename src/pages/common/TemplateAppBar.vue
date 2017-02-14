@@ -14,6 +14,7 @@
         data() {
             return {
                 msg: 'Hello World',
+                loged: false,
                 routerLogin: RouterPath.PAGES_LOGIN
             }
         },
