@@ -40,7 +40,7 @@
         }
     }
 </script>
-<style scoped lang="css">
+<style scoped lang="less">
     .mu-card{
         width: 50%;
         margin: 0 auto;
@@ -50,7 +50,11 @@
     }
     .mu-card-media{
         position: relative;
-        margin: 0 auto;
+        margin: 50px auto;
+
+        #card-input-box{
+            position: relative;
+        }
     }
     .mu-card-actions{
         margin: 0 auto;
@@ -60,7 +64,9 @@
         width: 100%;
     }
     .captcha {
-        margin: 0 auto;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
     #captcha-box {
         /*text-align: left;*/

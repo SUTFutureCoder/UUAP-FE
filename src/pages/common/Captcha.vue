@@ -2,8 +2,7 @@
     <div class="captcha">
         <div id="captcha-box">
             <img :src="imgCaptchaUrl" @click="reloadImgCaptcha"/>
-            <a>声音验证码</a>
-            <mu-icon alt="声音验证码" value="headset_black" @click="reloadVoiceCaptcha"/>
+            <mu-icon title="声音验证码" value="headset_black" @click="reloadVoiceCaptcha"/>
             <audio :src="audioCaptchaUrl" autoplay="autoplay" hidden="hidden"></audio>
         </div>
     </div>
@@ -31,4 +30,10 @@
     }
 </script>
 <style scoped lang="less">
+    .mu-icon {
+        width: 24px;
+    }
+    #captcha-box {
+        display: inline-block;
+    }
 </style>
