@@ -4,7 +4,7 @@
         <div class="appbar-title-title"><a slot="left">门神-Alpha</a></div>
         <mu-flat-button color="white" label="接入" slot="right"/>
         <mu-flat-button color="white" label="关于" slot="right"/>
-        <mu-flat-button color="white" v-if="loged" :label="msg" @click="redirect(routerLogin)" slot="right"/>
+        <mu-flat-button color="white" v-if="loged" :label="msg" @click="redirect(routerLogin)"/>
     </mu-appbar>
 </template>
 <script>

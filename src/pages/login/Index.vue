@@ -11,7 +11,7 @@
         <mu-card-actions>
             <mu-row gutter>
                 <mu-col width="100" tablet="70" desktop="70">
-                    <mu-raised-button id="card-action-login-btn" label="登录" primary/>
+                    <mu-raised-button id="card-action-login-btn" @click="loginExec" label="登录" primary/>
                 </mu-col>
                 <mu-col width="100" tablet="30" desktop="30">
                     <mu-raised-button id="card-action-reg-btn"   label="注册" backgroundColor="#a4c639" />
@@ -30,9 +30,14 @@
             }
         },
         methods: {
-            reloadCaptcha: function (){
-                //使用vue resource重新请求一个图片
-                alert('testestsetset');
+            loginExec: function () {
+                this.$http.get('http://www.baidu.com')
+                    .then((response) => {
+                        console.log(response)
+                    })
+                    .catch(function (response) {
+                        console.log(response)
+                    })
             }
         },
         components: {
