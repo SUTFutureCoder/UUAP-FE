@@ -20,7 +20,10 @@
             </mu-stepper>
             <div class="step-content">
                 <template v-if="activeStep == 0">
-                    <RegStep1></RegStep1>
+                    <!--<RegStep1></RegStep1>-->
+                <!--</template>-->
+                <!--<template v-if="activeStep == 1">-->
+                    <RegStep2></RegStep2>
                 </template>
             </div>
         </div>
@@ -28,6 +31,7 @@
 </template>
 <script>
     import RegStep1 from './components/RegStep1'
+    import RegStep2 from './components/RegStep2'
 
     export default {
         data () {
@@ -44,7 +48,8 @@
 
         },
         components: {
-            RegStep1
+            RegStep1,
+            RegStep2
         }
     }
 </script>
@@ -60,5 +65,8 @@
         width: 100%;
         max-width: 700px;
         margin: auto;
+    }
+    .step-content {
+        padding: 8px 8px 8px 8px;
     }
 </style>

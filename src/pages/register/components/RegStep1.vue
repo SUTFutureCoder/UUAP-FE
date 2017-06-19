@@ -52,7 +52,6 @@
     .reg_step_1 {
         display: inline-block;
         width: auto;
-        margin: 5px 5px 5px 5px;
     }
     .reg_phone_captcha_btn {
         margin-left: 10px;
