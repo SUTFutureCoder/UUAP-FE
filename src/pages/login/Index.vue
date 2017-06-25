@@ -2,10 +2,17 @@
     <mu-card>
         <mu-card-media>
             <div id="card-input-box">
-                <mu-text-field label="手机号或邮箱" v-model="login_account" labelFloat/><br/>
-                <mu-text-field label="密码" type="password" v-model="login_password" labelFloat/><br/>
-                <mu-text-field label="验证码" hintText="图片或声音验证码" v-model="login_captcha" labelFloat/><br/>
+                <mu-row gutter>
+                    <mu-text-field label="手机号或邮箱" v-model="login_account" labelFloat/>
+                </mu-row>
+                <mu-row gutter>
+                    <mu-text-field label="密码" type="password" v-model="login_password" labelFloat/>
+                </mu-row>
+                <mu-row gutter>
+                    <mu-text-field label="验证码" hintText="图片或声音验证码" v-model="login_captcha" labelFloat/>
+                </mu-row>
                 <captcha></captcha>
+
             </div>
         </mu-card-media>
         <mu-card-actions>
@@ -68,6 +75,10 @@
 
         #card-input-box{
             position: relative;
+
+            .mu-text-field{
+                margin-left: 50%;
+                transform: translateX(-50%);            }
         }
     }
     .mu-card-actions{
@@ -81,8 +92,5 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-    }
-    #captcha-box {
-        /*text-align: left;*/
     }
 </style>

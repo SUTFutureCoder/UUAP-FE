@@ -20,10 +20,13 @@
             </mu-stepper>
             <div class="step-content">
                 <template v-if="activeStep == 0">
-                    <!--<RegStep1></RegStep1>-->
-                <!--</template>-->
-                <!--<template v-if="activeStep == 1">-->
-                    <RegStep2></RegStep2>
+                    <RegStep1 @next="nextStep"></RegStep1>
+                </template>
+                <template v-if="activeStep == 1">
+                    <RegStep2 @next="nextStep" :lastStepRet="lastStepRet"></RegStep2>
+                </template>
+                <template v-if="activeStep == 2">
+                    <RegStep3 :lastStepRet="lastStepRet"></RegStep3>
                 </template>
             </div>
         </div>
@@ -32,11 +35,13 @@
 <script>
     import RegStep1 from './components/RegStep1'
     import RegStep2 from './components/RegStep2'
+    import RegStep3 from './components/RegStep3'
 
     export default {
         data () {
             return {
-                activeStep: 0
+                activeStep: 0,
+                lastStepRet: {},
             }
         },
         computed: {
@@ -45,11 +50,15 @@
             }
         },
         methods: {
-
+            nextStep: function(childData){
+                this.lastStepRet = childData
+                this.activeStep++
+            }
         },
         components: {
             RegStep1,
-            RegStep2
+            RegStep2,
+            RegStep3,
         }
     }
 </script>

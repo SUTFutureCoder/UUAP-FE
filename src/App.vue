@@ -1,19 +1,25 @@
 <template>
     <div id="app">
-        <top></top>
+        <top v-if="show_top == true"></top>
         <router-view></router-view>
     </div>
 </template>
 
 <script>
 import Top from 'pages/common/TemplateAppBar'
+import Bus from 'assets/EventBus'
 
 export default {
     name: 'app',
     data () {
         return {
-
+            show_top: true,
         }
+    },
+    mounted (){
+        Bus.$on('test', function (msg) {
+            this.show_top = false
+        });
     },
     components: {
         Top
