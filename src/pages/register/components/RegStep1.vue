@@ -10,7 +10,7 @@
                 <mu-raised-button label="发送验证码"  class="reg_phone_captcha_btn" v-if="reg_phone_captcha_send == false" @click="send_phone_captcha()"/>
                 <mu-raised-button label="验证码已发送" disabled="disabled" class="reg_phone_captcha_btn" v-if="reg_phone_captcha_send == true"/>
             </mu-row>
-            <mu-text-field label="验证码" v-model="reg_phone_captcha" class="reg_phone_captcha_input" labelFloat/>
+            <mu-text-field label="手机验证码" v-model="reg_phone_captcha" class="reg_phone_captcha_input" labelFloat/>
             <mu-raised-button label="完善信息" class="reg_step_2_btn" @click="next" fullWidth primary/>
         </div>
     </div>

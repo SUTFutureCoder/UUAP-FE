@@ -22,3 +22,8 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
+
+Vue.http.interceptors.push((request, next) => {
+  request.credentials = true
+  next()
+})
