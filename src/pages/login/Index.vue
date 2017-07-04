@@ -43,9 +43,15 @@
         },
         methods: {
             loginExec: function () {
-                this.$http.get(API.API_GET_IMG_CAPTCHA)
+                this.$http.post(API.API_LOGIN, this.$data, {
+                        emulateJSON: true
+                    })
                     .then((response) => {
-                        console.log(response)
+                        var ret = response.body
+                        if (ret['error_no'] != 0) {
+                            alert(ret['error_msg'])
+                            this.reg_phone_captcha_send = false
+                        }
                     })
                     .catch(function (response) {
                         console.log(response)

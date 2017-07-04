@@ -12,3 +12,5 @@ export const API_GET_VOICE_CAPTCHA  = HTTP_BASE + 'platform/GetVoiceCaptcha?';  
 export const API_SEND_PHONE_CAPTCHA = HTTP_BASE + 'platform/SendPhoneCaptcha';  //发送手机验证码
 
 export const API_COMPLETE_INFO      = HTTP_BASE + 'user/CompleteUserInfo';      //完善信息
+
+export const API_LOGIN              = HTTP_BASE + 'user/Login';                 //登录
