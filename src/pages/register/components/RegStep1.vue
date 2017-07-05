@@ -52,10 +52,15 @@
             },
             next: function () {
                 //检测数据是否正常
+                if (this.reg_phone == '' || this.reg_phone_captcha == '') {
+                    alert('请输入手机号及验证码');
+                    return;
+                }
 
                 //没有问题切换到下一个
                 this.$emit('next', {
                     reg_phone: this.reg_phone,
+                    reg_phone_captcha: this.reg_phone_captcha,
                 })
             }
         },

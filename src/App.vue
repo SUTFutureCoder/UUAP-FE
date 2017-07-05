@@ -18,6 +18,7 @@ export default {
     },
     mounted (){
         Bus.$on('test', function (msg) {
+            alert(msg)
             this.show_top = false
         });
     },
