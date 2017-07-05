@@ -4,7 +4,7 @@
  * 接口字典
  *
  */
-export const HTTP_BASE = 'http://localhost/UUAP/index.php/';
+export const HTTP_BASE = 'http://localhost/UUAP/';
 
 //验证码系列
 export const API_GET_IMG_CAPTCHA    = HTTP_BASE + 'platform/GetImgCaptcha?';    //获取图片验证码
