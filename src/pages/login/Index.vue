@@ -1,34 +1,38 @@
 <template>
-    <mu-card>
-        <mu-card-media>
-            <div id="card-input-box">
-                <mu-row gutter>
-                    <mu-text-field label="手机号或邮箱" v-model="login_account" labelFloat/>
-                </mu-row>
-                <mu-row gutter>
-                    <mu-text-field label="密码" type="password" v-model="login_password" labelFloat/>
-                </mu-row>
-                <mu-row gutter>
-                    <mu-text-field label="验证码" hintText="图片或声音验证码" v-model="login_captcha" labelFloat/>
-                </mu-row>
-                <captcha></captcha>
+    <div id="login">
+        <top v-if="show_top == true"></top>
+        <mu-card>
+            <mu-card-media>
+                <div id="card-input-box">
+                    <mu-row gutter>
+                        <mu-text-field label="手机号或邮箱" v-model="login_account" labelFloat/>
+                    </mu-row>
+                    <mu-row gutter>
+                        <mu-text-field label="密码" type="password" v-model="login_password" labelFloat/>
+                    </mu-row>
+                    <mu-row gutter>
+                        <mu-text-field label="验证码" hintText="图片或声音验证码" v-model="login_captcha" labelFloat/>
+                    </mu-row>
+                    <captcha></captcha>
 
-            </div>
-        </mu-card-media>
-        <mu-card-actions>
-            <mu-row gutter>
-                <mu-col width="100" tablet="70" desktop="70">
-                    <mu-raised-button id="card-action-login-btn" @click="loginExec" label="登录" primary/>
-                </mu-col>
-                <mu-col width="100" tablet="30" desktop="30">
-                    <mu-raised-button id="card-action-reg-btn" @click="regExec" label="注册" backgroundColor="#a4c639" />
-                </mu-col>
-            </mu-row>
-        </mu-card-actions>
-    </mu-card>
+                </div>
+            </mu-card-media>
+            <mu-card-actions>
+                <mu-row gutter>
+                    <mu-col width="100" tablet="70" desktop="70">
+                        <mu-raised-button id="card-action-login-btn" @click="loginExec" label="登录" primary/>
+                    </mu-col>
+                    <mu-col width="100" tablet="30" desktop="30">
+                        <mu-raised-button id="card-action-reg-btn" @click="regExec" label="注册" backgroundColor="#a4c639" />
+                    </mu-col>
+                </mu-row>
+            </mu-card-actions>
+        </mu-card>
+    </div>
 </template>
 <script>
     import Captcha from '../../pages/common/Captcha'
+    import Top from 'pages/common/TemplateAppBar'
     import * as API from 'constants/API'
     import * as RouterPaths from 'constants/RouterPaths'
 
@@ -39,6 +43,8 @@
                 login_account:  "",
                 login_password: "",
                 login_captcha:  "",
+
+                show_top: true,
             }
         },
         methods: {
@@ -63,6 +69,7 @@
 
         },
         components: {
+            Top,
             Captcha
         }
     }

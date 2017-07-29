@@ -1,38 +1,42 @@
 <template>
-    <mu-card>
-        <div class="step-container">
-            <mu-stepper :activeStep="activeStep">
-                <mu-step>
-                    <mu-step-label>
-                        注册
-                    </mu-step-label>
-                </mu-step>
-                <mu-step>
-                    <mu-step-label>
-                        完善
-                    </mu-step-label>
-                </mu-step>
-                <mu-step>
-                    <mu-step-label>
-                        欢迎
-                    </mu-step-label>
-                </mu-step>
-            </mu-stepper>
-            <div class="step-content">
-                <template v-if="activeStep == 0">
-                    <RegStep1 @next="nextStep"></RegStep1>
-                </template>
-                <template v-if="activeStep == 1">
-                    <RegStep2 @next="nextStep" :lastStepRet="lastStepRet"></RegStep2>
-                </template>
-                <template v-if="activeStep == 2">
-                    <RegStep3 :lastStepRet="lastStepRet"></RegStep3>
-                </template>
+    <div id="register">
+        <top v-if="show_top == true"></top>
+        <mu-card>
+            <div class="step-container">
+                <mu-stepper :activeStep="activeStep">
+                    <mu-step>
+                        <mu-step-label>
+                            注册
+                        </mu-step-label>
+                    </mu-step>
+                    <mu-step>
+                        <mu-step-label>
+                            完善
+                        </mu-step-label>
+                    </mu-step>
+                    <mu-step>
+                        <mu-step-label>
+                            欢迎
+                        </mu-step-label>
+                    </mu-step>
+                </mu-stepper>
+                <div class="step-content">
+                    <template v-if="activeStep == 0">
+                        <!--<RegStep1 @next="nextStep"></RegStep1>-->
+                    <!--</template>-->
+                    <!--<template v-if="activeStep == 1">-->
+                        <!--<RegStep2 @next="nextStep" :lastStepRet="lastStepRet"></RegStep2>-->
+                    <!--</template>-->
+                    <!--<template v-if="activeStep == 2">-->
+                        <RegStep3 :lastStepRet="lastStepRet"></RegStep3>
+                    </template>
+                </div>
             </div>
-        </div>
-    </mu-card>
+        </mu-card>
+    </div>
 </template>
 <script>
+    import Top from 'pages/common/TemplateAppBar'
     import RegStep1 from './components/RegStep1'
     import RegStep2 from './components/RegStep2'
     import RegStep3 from './components/RegStep3'
@@ -42,6 +46,8 @@
             return {
                 activeStep: 0,
                 lastStepRet: {},
+
+                show_top: true,
             }
         },
         computed: {
@@ -56,6 +62,8 @@
             }
         },
         components: {
+            Top,
+
             RegStep1,
             RegStep2,
             RegStep3,

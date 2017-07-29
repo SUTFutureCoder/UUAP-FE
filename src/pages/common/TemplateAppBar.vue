@@ -1,5 +1,5 @@
 <template>
-    <mu-appbar title="测试头部">
+    <mu-appbar>
         <div class="appbar-title-img"><img src="~assets/img/DoorGod.png"></div>
         <div class="appbar-title-title"><a slot="left">门神-Alpha</a></div>
         <mu-flat-button color="white" label="接入" slot="right"/>

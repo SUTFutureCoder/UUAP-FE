@@ -3,20 +3,36 @@
  * 路由常量表
  */
 
-// export const PAGES_HOME  = '/'
+//登录
 export const PAGES_LOGIN = '/'
-export const PAGES_LOGIN_NAME = '登录'
 
+//注册
 export const PAGES_REGISTER = '/reg'
-export const PAGES_REGISTER_NAME = '注册'
 
+//关于
 export const PAGES_ABOUT = '/about'
-export const PAGES_ABOUT_NAME = '关于'
 
 //文档
 export const PAGES_DOC   = '/doc'
-export const PAGES_DOC_NAME   = '文档'
 
 //开放认证
 export const PAGES_OAUTH = '/oauth'
-export const PAGES_OAUTH_NAME = '开放认证'
+
+//个人中心
+export const PAGES_AUDIT = '/audit'
+//用户-我的信息
+export const PAGES_AUDIT_ME = '/audit/user/me'
+//用户-授权应用
+export const PAGES_AUDIT_AUTHORIZED = '/audit/user/authorized_list'
+//用户-隐私设置
+export const PAGES_AUDIT_PRIVATE = '/audit/user/private'
+//开发者-申请接入
+export const PAGES_AUDIT_DEV_APPLY = '/audit/dev/apply'
+//开发者-sdk
+export const PAGES_AUDIT_DEV_SDK = '/audit/dev/sdk'
+//开发者-应用列表
+export const PAGES_AUDIT_DEV_APP = '/audit/dev/app'
+//开发者-开发者设置
+export const PAGES_AUDIT_DEV_SETTING = '/audit/dev/setting'
+
+
